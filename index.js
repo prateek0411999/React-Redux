@@ -1,10 +1,12 @@
 //as we're working on a node.js application so have to import redux using require and if it was a react application we can do it simply using es6 import
 const redux = require('redux');
-
+const reduxLogger= require('redux-logger'); //middleware(to log stuff b/w dispatching an action and the momemt is reaches the reducer)
 
 //creating the store
 const createStore=redux.createStore();
-
+const logger= redux.createLogger();
+//to apply this middleware redux provides us with the func called applyMiddleware which we can  make use of (2nd param in createStore method - applyMiddleware(logger))
+const applyMiddleware= redux.applyMiddleware
 console.log('from index.js')
 const BUY_CAKE='BUY_CAKE'
 const BUY_ICECREAM='BUY_ICECREAM'
@@ -97,7 +99,7 @@ const rootReducer=combineReducers({
     cake: cakeReducer,
     iceCream: IceCreamReducer
 })
-const store= createStore(rootReducer);
+const store= createStore(rootReducer, applyMiddleware(logger));
 //now redux store is holding the application state
 
 //To  get the initial state
