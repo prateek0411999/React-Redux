@@ -57,7 +57,7 @@ const reducer = (state= initialState, action)=>{
             }
     }
 }
-//acrion creator 
+//action creator 
 //using thunk middleware we can return a function instead of an action object
 //also it can dispatch the same
 const fetchUsers = () =>{
