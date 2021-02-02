@@ -10,7 +10,7 @@ const applyMiddleware= redux.applyMiddleware
 console.log('from index.js')
 const BUY_CAKE='BUY_CAKE'
 const BUY_ICECREAM='BUY_ICECREAM'
-
+//making variables
 
 
 //define the action - an object with type property
